@@ -14,7 +14,6 @@ const Login = ({ history }) => {
 
   // AuthContextからlogin関数を受け取る
   const handleSubmit = event => {
-    console.log('todoita??');
     event.preventDefault();
     const { email, password } = event.target.elements;
     login(email.value, password.value, history);
