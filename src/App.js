@@ -1,31 +1,23 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import firebase from './Firebase';
-//screens
-import Home from './screens/Home';
-import Profile from './screens/Profile';
-import SignInOrUp from './screens/SignInOrUp';
-
-import Auth from './Auth';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
+import { AuthProvider } from "./AuthProvider";
+import Home from "./screens/Home";
+import Profile from "./screens/Profile";
+import Login from "./screens/Login";
 
 const App = () => {
-
   return (
+    <AuthProvider>
       <Router>
-          <Switch>
-              <Route exact path="/login" component={SignInOrUp} />
-              {/* 以下認証のみ */}
-              <Auth>
-                  <Switch>
-                      <Route exact path="/" component={Home} />
-                      <Route exact path="/profile" component={Profile} />
-                      <Route render={() => <p>not found.</p>} />
-                  </Switch>
-              </Auth>
-          </Switch>
+        <div>
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/profile" component={Profile} />
+          <Route exact path="/login" component={Login} />
+        </div>
       </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
