@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CustomCard from '../components/CustomCard';
 import Image from 'material-ui-image'
-import background from '../img/background-image.jpg';
+import sakura from '../img/pink.jpg';
 import ff7 from '../img/ff7.jpg';
 import yojohan from '../img/yojohan.png';
 import pikatyu from '../img/pikatyu.jpg';
@@ -26,7 +26,7 @@ const Home = () =>  {
     return (
       <>
       <div class={classes.paperContainer}>
-        <Image src={background} imageStyle={{width: '150vw', minHeight: '300vh', backgroundSize:'cover'}}/>
+        <Image src={sakura} imageStyle={{width: '100vw', minHeight: '300vh', backgroundSize:'cover'}}/>
         <Container className={classes.container} maxWidth="xl">
 
           <Container maxWidth="sm">
@@ -72,7 +72,7 @@ const Home = () =>  {
               keyword="「彼はあたしたちが想像もできないことをパソコン一つでやってのける力を持ってる」"/> : null
             }
           <Container maxWidth="sm">
-            <Button className={classes.button} color="secondary" fullWidth onClick={handleLogout} variant="contained">
+            <Button className={classes.button} fullWidth onClick={handleLogout} variant="contained">
               Log out
             </Button>
           </Container>
@@ -110,6 +110,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 12,
   },
   button: {
+    color: 'white',
+    backgroundColor: 'rgb(66, 24, 208)',
     maxWidth: 600,
   }
 }));
