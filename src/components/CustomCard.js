@@ -57,7 +57,7 @@ const CustomCard = (props) =>  {
 
   const handleClickOpen = () => {
     setOpen(true);
-    props.func(props.funcNum + 1);
+    props.func(props.funcNum + 2);
   };
   const handleClose = () => {
     setOpen(false);

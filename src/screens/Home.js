@@ -63,7 +63,7 @@ const Home = () =>  {
             img={pikatyu}
             num="3"
             keyword="「マサラタウンにさよならバイバイ。」"/>
-            {count >= 3 ?
+            {count >= 6 ?
              <CustomCard name={process.env.REACT_APP_NAME_SYSTEM}
               message={process.env.REACT_APP_MESSEAGE_FOR_SYSTEM}
               myName={process.env.REACT_APP_MY_NAME}
