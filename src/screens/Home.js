@@ -8,7 +8,7 @@ import Image from 'material-ui-image'
 import background from '../img/background-image.jpg';
 import ff7 from '../img/ff7.jpg';
 import yojohan from '../img/yojohan.png';
-import kaigo from '../img/kaigo.png';
+import pikatyu from '../img/pikatyu.jpg';
 
 const Home = () =>  {
 
@@ -19,11 +19,11 @@ const Home = () =>  {
     return (
       <>
       <div class={classes.paperContainer}>
-        <Image src={background} imageStyle={{width: 'auto', height: '100%', backgroundSize:'cover'}}/>
+        <Image src={background} imageStyle={{width: '150vw', minHeight: '300vh', backgroundSize:'cover'}}/>
         <Container className={classes.container} maxWidth="xl">
-          <CustomCard name={process.env.REACT_APP_NAME_TOP} message={process.env.REACT_APP_MESSEAGE_FOR_TOP} myName={process.env.REACT_APP_MY_NAME} img={ff7}/>
-          <CustomCard name={process.env.REACT_APP_NAME_SIDE} message={process.env.REACT_APP_MESSEAGE_FOR_SIDE} myName={process.env.REACT_APP_MY_NAME} img={yojohan}/>
-          <CustomCard name={process.env.REACT_APP_NAME_STAFF} message={process.env.REACT_APP_MESSEAGE_FOR_STAFF} myName={process.env.REACT_APP_MY_NAME} img={kaigo}/>
+          <CustomCard name={process.env.REACT_APP_NAME_TOP} message={process.env.REACT_APP_MESSEAGE_FOR_TOP} myName={process.env.REACT_APP_MY_NAME} img={ff7} keyword="「あっ、これね。気に入ってくれた？１ギルなんだけど、どう？」"/>
+          <CustomCard name={process.env.REACT_APP_NAME_SIDE} message={process.env.REACT_APP_MESSEAGE_FOR_SIDE} myName={process.env.REACT_APP_MY_NAME} img={yojohan} keyword="「また阿呆なものを作りましたね。」" />
+          <CustomCard name={process.env.REACT_APP_NAME_STAFF} message={process.env.REACT_APP_MESSEAGE_FOR_STAFF} myName={process.env.REACT_APP_MY_NAME} img={pikatyu} keyword="「マサラタウンにさよならバイバイ。」"/>
           <Button className={classes.button} color="secondary" fullWidth onClick={handleLogout} variant="contained">
             Log out
           </Button>
@@ -59,7 +59,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 12,
   },
   button: {
-    maxWidth: 100,
+    marginLeft: '20%',
+    maxWidth: 400,
   }
 }));
 

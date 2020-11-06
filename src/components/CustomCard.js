@@ -67,29 +67,32 @@ const CustomCard = (props) =>  {
       <Container className={classes.container} maxWidth="sm">
         <Card className={classes.root}>
           <CardContent>
-            <Typography variant="h5" component="h2">
+            <Typography style={{marginBottom: 20}}variant="h5" component="h2">
               {props.name}へ
             </Typography>
-              <CardContent style={{ marginLeft: 20  }}>
-                <Image imageStyle={{width: 'auto',maxHeight: 200}} src={props.img} />
-              </CardContent>
-            <Typography variant="body2" component="p">
+            <Typography component="p">
+              <Image imageStyle={{maxWidth: 530, height: 'auto'}} style={{paddingTop: '60%'}} src={props.img} />
+            </Typography>
+            <Typography style={{marginBottom: 10}}component="p">
+              {props.keyword}
+            </Typography>
+            <Typography component="p">
               {props.myName}
             </Typography>
           </CardContent>
+          <Button color="success" fullWidth onClick={ handleClickOpen } variant="contained">
+            開ける
+          </Button>
         </Card>
-        <Button color="secondary" fullWidth onClick={ handleClickOpen } variant="contained">
-          show modal
-        </Button>
       </Container>
         <>
-          <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+          <Dialog className={classes.dia} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
             <DialogTitle id="customized-dialog-title" onClose={handleClose}>
               {props.name}へ
             </DialogTitle>
             <DialogContent dividers>
-              <Typography gutterBottom>
-                {props.message}
+              <Typography className={classes.bgblue}style={{marginBottom: 20}} gutterBottom>
+                <p class={classes.border}>{props.message}</p>
               </Typography>
               <Typography gutterBottom>
                 {props.myName}より
@@ -107,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     minWidth: 275,
-    maxHeight: 275,
+    maxHeight: 'auto',
   },
   bullet: {
     display: 'inline-block',
@@ -120,6 +123,17 @@ const useStyles = makeStyles((theme) => ({
   pos: {
     marginBottom: 12,
   },
+  bgblue: {
+    lineHeight: '36px',
+    margin: 0,
+    padding: 0,
+  },
+  border: {
+    border: '1px solid #dddddd',
+    backgroundColor: '#f8fbfc',
+    margin: '30px 0',
+    padding: '20px 40px 40px',
+  }
 }));
 
 export default CustomCard;
