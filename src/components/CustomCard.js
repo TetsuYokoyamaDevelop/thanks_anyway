@@ -57,6 +57,7 @@ const CustomCard = (props) =>  {
 
   const handleClickOpen = () => {
     setOpen(true);
+    props.func(props.funcNum + 1);
   };
   const handleClose = () => {
     setOpen(false);
@@ -68,16 +69,13 @@ const CustomCard = (props) =>  {
         <Card className={classes.root}>
           <CardContent>
             <Typography style={{marginBottom: 20}}variant="h5" component="h2">
-              {props.name}へ
+              {props.num}
             </Typography>
             <Typography component="p">
               <Image imageStyle={{maxWidth: 530, height: 'auto'}} style={{paddingTop: '60%'}} src={props.img} />
             </Typography>
             <Typography style={{marginBottom: 10}}component="p">
               {props.keyword}
-            </Typography>
-            <Typography component="p">
-              {props.myName}
             </Typography>
           </CardContent>
           <Button color="success" fullWidth onClick={ handleClickOpen } variant="contained">
@@ -88,14 +86,11 @@ const CustomCard = (props) =>  {
         <>
           <Dialog className={classes.dia} onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
             <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-              {props.name}へ
+              {props.name}
             </DialogTitle>
             <DialogContent dividers>
-              <Typography className={classes.bgblue}style={{marginBottom: 20}} gutterBottom>
-                <p class={classes.border}>{props.message}</p>
-              </Typography>
-              <Typography gutterBottom>
-                {props.myName}より
+              <Typography className={classes.bgblue, classes.border} gutterBottom>
+                <p><b>{props.name}へ</b></p><p><br />{props.message}<br /></p><br /><p style={{textAlign: 'right'}}>{props.myName}より</p>
               </Typography>
             </DialogContent>
           </Dialog>
@@ -132,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #dddddd',
     backgroundColor: '#f8fbfc',
     margin: '30px 0',
-    padding: '20px 40px 40px',
+    padding: '20px 40px 20px',
   }
 }));
 
