@@ -12,7 +12,7 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-
+import Image from 'material-ui-image';
 
 const CustomCard = (props) =>  {
 
@@ -67,24 +67,16 @@ const CustomCard = (props) =>  {
       <Container className={classes.container} maxWidth="sm">
         <Card className={classes.root}>
           <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              {props.name}
-            </Typography>
             <Typography variant="h5" component="h2">
-              be{bull}nev{bull}o{bull}lent
+              {props.name}へ
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              adjective
-            </Typography>
+              <CardContent style={{ marginLeft: 20  }}>
+                <Image imageStyle={{width: 'auto',maxHeight: 200}} src={props.img} />
+              </CardContent>
             <Typography variant="body2" component="p">
-              {props.message}
-              <br />
-              {'"a benevolent smile"'}
+              {props.myName}
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
         </Card>
         <Button color="secondary" fullWidth onClick={ handleClickOpen } variant="contained">
           show modal
@@ -93,21 +85,14 @@ const CustomCard = (props) =>  {
         <>
           <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
             <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-              Modal title
+              {props.name}へ
             </DialogTitle>
             <DialogContent dividers>
               <Typography gutterBottom>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                {props.message}
               </Typography>
               <Typography gutterBottom>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-                lacus vel augue laoreet rutrum faucibus dolor auctor.
-              </Typography>
-              <Typography gutterBottom>
-                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-                scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-                auctor fringilla.
+                {props.myName}より
               </Typography>
             </DialogContent>
           </Dialog>
@@ -122,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     minWidth: 275,
+    maxHeight: 275,
   },
   bullet: {
     display: 'inline-block',
