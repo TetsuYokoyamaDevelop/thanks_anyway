@@ -46,7 +46,7 @@ const Home = () =>  {
             myName={process.env.REACT_APP_MY_NAME}
             img={ff7}
             num="1"
-            keyword="「あっ、これね。気に入ってくれた？１ギルなんだけど、どう？」"/>
+            />
           <CustomCard func={setCount}
             funcNum={count}
             name={process.env.REACT_APP_NAME_SIDE}
@@ -54,7 +54,7 @@ const Home = () =>  {
             myName={process.env.REACT_APP_MY_NAME}
             img={yojohan}
             num="2"
-            keyword="「また阿呆なものを作りましたね。」" />
+            />
           <CustomCard func={setCount}
             funcNum={count}
             name={process.env.REACT_APP_NAME_STAFF}
@@ -62,14 +62,14 @@ const Home = () =>  {
             myName={process.env.REACT_APP_MY_NAME}
             img={pikatyu}
             num="3"
-            keyword="「マサラタウンにさよならバイバイ。」"/>
+            />
             {count >= 6 ?
              <CustomCard name={process.env.REACT_APP_NAME_SYSTEM}
               message={process.env.REACT_APP_MESSEAGE_FOR_SYSTEM}
               myName={process.env.REACT_APP_MY_NAME}
               img={falcon}
               num="4"
-              keyword="「彼はあたしたちが想像もできないことをパソコン一つでやってのける力を持ってる」"/> : null
+              /> : null
             }
           <Container maxWidth="sm">
             <Button className={classes.button} fullWidth onClick={handleLogout} variant="contained">
@@ -77,6 +77,15 @@ const Home = () =>  {
             </Button>
           </Container>
 
+          <Container maxWidth="sm"　style={{marginTop: 70}}>
+            <Card className={classes.root}>
+              <CardContent>
+                <Typography variant="h5" component="h2">
+                  ※このサイトは11月末にクローズされます。
+                </Typography>
+              </CardContent>
+            </Card>
+          </Container>
 
         </Container>
         </div>

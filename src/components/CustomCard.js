@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -73,9 +72,6 @@ const CustomCard = (props) =>  {
             </Typography>
             <Typography component="p">
               <Image imageStyle={{maxWidth: 530, height: 'auto'}} style={{paddingTop: '60%'}} src={props.img} />
-            </Typography>
-            <Typography style={{marginBottom: 10}}component="p">
-              {props.keyword}
             </Typography>
           </CardContent>
           <Button color="success" fullWidth onClick={ handleClickOpen } variant="contained">
