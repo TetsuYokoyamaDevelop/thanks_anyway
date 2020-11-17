@@ -15,5 +15,5 @@
 ## deploy
 ### `firebase deploy`
 
-ここのコードを全部クローンするというより部分的にコピって使ってみてください！
-I guess coping code partially is better than clone this project all!!
+#### ここのコードを全部クローンするというより部分的にコピって使ってみてください！
+#### I guess coping code partially is better than clone this project all!!
